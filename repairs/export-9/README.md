@@ -34,3 +34,15 @@ installs with `npm ci`; `npm run build`, `npm run lint` and
 `tsc --noEmit -p tsconfig.app.json` exit 0; the built bundle no longer
 contains "integration is not live". This is evidence about the repaired
 source only. The live site is unchanged until Famous.ai redeploys it.
+
+## Repaired export
+
+`story-orchids-interactive 9 + certification repairs.zip` is export 9 with
+`export-9-repairs.patch` applied and package-lock.json regenerated
+(`npm install --package-lock-only`, sha256
+`80486e9b05ea3ceab8a58c98c501e36ab5905e4c2687734d818c2b6028ff7969` -- identical
+to the lockfile the hosted runner regenerated). 207 files, deterministic
+timestamps, archive sha256
+`8be586257a63691a28ce9a902b21572c7c830bd6cac50fd09fddcf8cd4ee44b4`.
+It is a repair candidate: the live site still serves export 9 until Famous.ai
+imports this source and republishes.
